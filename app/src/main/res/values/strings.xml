@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FatCatProject</string>
+    <string name="hello_world">Hello world</string>
+    <string name="play_vs_friend">Play VS Friend</string>
+    <string name="play_vs_bot">Play VS Bot</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_4">4</string>
+    <string name="_2">2</string>
+    <string name="j">J</string>
+    <string name="_9">9</string>
+    <string name="_3">3</string>
+    <string name="k">K</string>
+    <string name="q">Q</string>
+    <string name="a">A</string>
+    <string name="_10">10</string>
+    <string name="_8">8</string>
+    <string name="_5">5</string>
+</resources>
