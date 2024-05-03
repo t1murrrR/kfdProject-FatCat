@@ -6,14 +6,13 @@ open class Player (val name: String, var PlayerCards: MutableList<Int>, var Rank
     open fun GetCards(player: Player) {
         var i = 0
         while(CountCard!=7){
-            if (Cards.CardsList.ShuffleList[i] != 0) {
-                PlayerCards[CountCard] = Cards.CardsList.ShuffleList[i]
-                Cards.CardsList.ShuffleList[i] = 0
+            if (Cards.CardsList.shuffleList[i] != 0) {
+                PlayerCards[CountCard] = Cards.CardsList.shuffleList[i]
+                Cards.CardsList.shuffleList[i] = 0
                 CountCard += 1
             }
             i+=1
         }
-        Cards.CardsList.UpdateCards(PlayerCards, RankCards)
+        Cards.CardsList.updateCards(PlayerCards, RankCards)
     }
-    //заполнение 3 массива наличия определенного значка (2-А)
 }

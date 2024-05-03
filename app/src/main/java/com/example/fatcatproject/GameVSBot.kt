@@ -24,14 +24,14 @@ class GameVSBot(var cards: Cards, var player: Player, var bot: Player, var count
         else {
             count += 1
             for (i in (0..51)) {
-                if (Cards.CardsList.ShuffleList[i] != 0) {
-                    player1.RankCards.add(Cards.CardsList.ShuffleRanks[i]) //игрок получает верхнюю карту колоды
-                    player1.PlayerCards.add(Cards.CardsList.ShuffleList[i])
+                if (Cards.CardsList.shuffleList[i] != 0) {
+                    player1.RankCards.add(Cards.CardsList.shuffleRanks[i]) //игрок получает верхнюю карту колоды
+                    player1.PlayerCards.add(Cards.CardsList.shuffleList[i])
                     player1.CountCard += 1 //количество его карт увеличилось на 1
-                    Cards.CardsList.ShuffleList[i] = 0; //обнуление верхней карты колоды
-                    Cards.CardsList.UpdateCards(
-                        Cards.CardsList.ShuffleList,
-                        Cards.CardsList.ShuffleRanks
+                    Cards.CardsList.shuffleList[i] = 0; //обнуление верхней карты колоды
+                    Cards.CardsList.updateCards(
+                        Cards.CardsList.shuffleList,
+                        Cards.CardsList.shuffleRanks
                     ) //обновление нуумерации карт
                     break
                 }
@@ -152,9 +152,9 @@ class GameVSBot(var cards: Cards, var player: Player, var bot: Player, var count
 
     // начало игры
     fun Start() {
-        cards.Shuffle() //рандом карт
+        cards.shuffle() //рандом карт
         player.GetCards(player) // раздача карт 1 и 2 игрокам
         bot.GetCards(bot)
-        Cards.CardsList.UpdateCards(Cards.CardsList.ShuffleList, Cards.CardsList.ShuffleRanks)
+        Cards.CardsList.updateCards(Cards.CardsList.shuffleList, Cards.CardsList.shuffleRanks)
     }
 }

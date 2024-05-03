@@ -1,12 +1,12 @@
 package com.example.fatcatproject
 
-class Cards(var ShuffleStatus: Boolean) {
+class Cards(var shuffleStatus: Boolean) {
 
     object CardsList{
-        var ShuffleList: MutableList<Int> = MutableList(52) {0}
-        var ShuffleRanks: MutableList<Int> = MutableList(52) {0}
+        var shuffleList: MutableList<Int> = MutableList(52) {0}
+        var shuffleRanks: MutableList<Int> = MutableList(52) {0}
         //функция для распределения карт по номеру
-        fun UpdateCards(ShuffleList: MutableList<Int>, ShuffleSigns: MutableList<Int>){
+        fun updateCards(ShuffleList: MutableList<Int>, ShuffleSigns: MutableList<Int>){
             for(i in(0..ShuffleList.size-1)){
                 if(ShuffleList[i]!=0)
                     ShuffleSigns[i]=(ShuffleList[i]-1)/4+2
@@ -16,35 +16,35 @@ class Cards(var ShuffleStatus: Boolean) {
     }
 
     // функция тасовки карт
-    fun Shuffle() {
-        ShuffleStatus = true
+    fun shuffle() {
+        shuffleStatus = true
         for (i in (0..51)) {
-            CardsList.ShuffleList[i] = i + 1
+            CardsList.shuffleList[i] = i + 1
         }
         repeat(200) {
             val a = (0..51).random()
             val b = (0..51).random()
             if (a != b) {
-                var c = CardsList.ShuffleList[a]
-                CardsList.ShuffleList[a] = CardsList.ShuffleList[b]
-                CardsList.ShuffleList[b] = c
+                var c = CardsList.shuffleList[a]
+                CardsList.shuffleList[a] = CardsList.shuffleList[b]
+                CardsList.shuffleList[b] = c
             }
         }
         for(i in(0..47)){
-            if(CardsList.ShuffleList[i] == CardsList.ShuffleList[i+1] &&
-                CardsList.ShuffleList[i+1] == CardsList.ShuffleList[i+2] &&
-                CardsList.ShuffleList[i+2] == CardsList.ShuffleList[i+3])
-                Shuffle()
+            if(CardsList.shuffleList[i] == CardsList.shuffleList[i+1] &&
+                CardsList.shuffleList[i+1] == CardsList.shuffleList[i+2] &&
+                CardsList.shuffleList[i+2] == CardsList.shuffleList[i+3])
+                shuffle()
         }
-        CardsList.UpdateCards(CardsList.ShuffleList, CardsList.ShuffleRanks)
+        CardsList.updateCards(CardsList.shuffleList, CardsList.shuffleRanks)
     }
 
     //функция расставления карт в правильном порядке (1-52)
     fun UnShuffle(){
-        ShuffleStatus = false
+        shuffleStatus = false
         for (i in (0..51)) {
-            CardsList.ShuffleList[i - 1] = i
+            CardsList.shuffleList[i - 1] = i
         }
-        Cards.CardsList.UpdateCards(CardsList.ShuffleList, CardsList.ShuffleRanks)
+        Cards.CardsList.updateCards(CardsList.shuffleList, CardsList.shuffleRanks)
     }
 }

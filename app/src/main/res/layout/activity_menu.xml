@@ -5,21 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="landscape"
+    android:background="@drawable/menu_background"
     tools:context=".ActivityMenu">
 
-    <Button
-        android:id="@+id/button_vs_player"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#0889ED"
-        android:text="@string/play_vs_friend"
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.768" />
-
+        app:layout_constraintVertical_bias="0.772"
+        app:srcCompat="@drawable/play_off" />
     <Button
         android:id="@+id/button_vs_bot"
         android:layout_width="140dp"
@@ -28,9 +27,173 @@
         android:text="@string/play_vs_bot"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.768" />
+        app:layout_constraintVertical_bias="0.774"
+        android:alpha="0"/>
+
+    <Button
+        android:id="@+id/button_settings"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"/>
+
+    <ImageView
+        android:id="@+id/image_settings_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/settings_sign"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"/>
+
+    <ImageView
+        android:id="@+id/image_settings"
+        android:layout_width="450dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settingsback"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/imageMusic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintHorizontal_bias="0.665"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.28"
+        app:srcCompat="@drawable/music_on"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/imageVolume"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintHorizontal_bias="0.335"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.28"
+        app:srcCompat="@drawable/volume_on"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/image_exit_settings"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.1"
+        app:srcCompat="@drawable/exit"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:id="@+id/image_account"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.6"
+        app:srcCompat="@drawable/account"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/button_exit_settings"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <Button
+        android:id="@+id/button_volume"
+        android:alpha="0"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintHorizontal_bias="0.335"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.28"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/button_music"
+        android:alpha="0"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintHorizontal_bias="0.665"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.28"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/button_account"
+        android:alpha="0"
+        android:layout_width="160dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_settings"
+        app:layout_constraintEnd_toEndOf="@+id/image_settings"
+        app:layout_constraintStart_toStartOf="@+id/image_settings"
+        app:layout_constraintTop_toTopOf="@+id/image_settings"
+        app:layout_constraintVertical_bias="0.6"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/button_exit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/image_exit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
